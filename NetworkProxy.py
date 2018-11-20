@@ -31,15 +31,15 @@ def handleQuery(query):
         if len(fields) == 1:
             try:
                 status = fields[0]
-                if status == STATUS_NONE_SHORT or status == STATUS_NONE:            
+                if status == STATUS_NONE_SHORT or STATUS_NONE.startswith(status):            
                     item.text = "Set Network Proxy: None"
                     item.subtext = "press enter or click to set"
                     item.addAction(TermAction("None", STATUS_NONE_COMMAND))
-                elif status == STATUS_AUTO_SHORT or status == STATUS_AUTO:            
+                elif status == STATUS_AUTO_SHORT or STATUS_AUTO.startswith(status):            
                     item.text = "Set Network Proxy: Auto"
                     item.subtext = "press enter or click to set"
                     item.addAction(TermAction("Auto", STATUS_AUTO_COMMAND))
-                elif status == STATUS_MANUAL_SHORT or status == STATUS_MANUAL:
+                elif status == STATUS_MANUAL_SHORT or STATUS_MANUAL.startswith(status):
                     item.text = "Set Network Proxy: Manual"
                     item.subtext = "press enter or click to set"
                     item.addAction(TermAction("Manual", STATUS_MANUAL_COMMAND))
