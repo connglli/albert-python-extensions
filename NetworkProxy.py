@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
 """Control network proxy status.
-Usage: nwp <status>
-Example: nwp manual"""
+Usage: proxy <status>
+Example: proxy manual"""
 
 from albertv0 import *
 
 __iid__ = "PythonInterface/v0.1"
 __prettyname__ = "Set Network Proxy"
 __version__ = "1.0"
-__trigger__ = "nwp "
+__trigger__ = "proxy "
 __author__ = "Simon Lee"
 __dependencies__ = []
 
@@ -31,11 +31,11 @@ def handleQuery(query):
         if len(fields) == 1:
             try:
                 status = fields[0]
-                if status == STATUS_NONE_SHORT or STATUS_NONE.startswith(status):            
+                if status == STATUS_NONE_SHORT or STATUS_NONE.startswith(status):
                     item.text = "Set Network Proxy: None"
                     item.subtext = "press enter or click to set"
                     item.addAction(TermAction("None", STATUS_NONE_COMMAND))
-                elif status == STATUS_AUTO_SHORT or STATUS_AUTO.startswith(status):            
+                elif status == STATUS_AUTO_SHORT or STATUS_AUTO.startswith(status):
                     item.text = "Set Network Proxy: Auto"
                     item.subtext = "press enter or click to set"
                     item.addAction(TermAction("Auto", STATUS_AUTO_COMMAND))

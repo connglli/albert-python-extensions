@@ -1,0 +1,11 @@
+#! /bin/bash
+
+ALBERT_EXTENSION_DIR=$HOME/.local/share/albert/org.albert.extension.python/modules
+
+if [[ ! -d $ALBERT_EXTENSION_DIR ]]; then
+  mkdir -p $ALBERT_EXTENSION_DIR
+fi
+
+# copy extensions to albert
+cp ./*.py $ALBERT_EXTENSION_DIR/
+
