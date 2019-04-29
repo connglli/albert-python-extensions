@@ -30,7 +30,7 @@ def handleQuery(query):
         item = Item(id=__prettyname__, completion=query.rawString)
         if len(fields) == 1:
             try:
-                status = fields[0]
+                status = fields[0].lower()
                 if status == STATUS_NONE_SHORT or STATUS_NONE.startswith(status):
                     item.text = "Set Network Proxy: None"
                     item.subtext = "press enter or click to set"
